@@ -2,50 +2,31 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EasyConfig</title>
   <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body { margin:0; background:#0f172a; color:#e2e8f0; font-family:sans-serif; padding:20px; }
-    .ec-diagram { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
-    .ec-node { border:1px solid #334155; padding:20px; border-radius:12px; text-align:center; background:#1e293b; min-width:120px; }
-    .ec-node-icon { margin-bottom:8px; }
+    body { background:#0f172a; color:white; font-family:Arial; padding:30px; text-align:center; }
+    .box { display:inline-block; border:1px solid #38bdf8; padding:20px; margin:10px; border-radius:10px; }
   </style>
 </head>
 <body>
   <div id="root"></div>
-
   <script type="text/babel">
     function App() {
-      const nodes = [
-        { icon: "monitor", label: "PC" },
-        { icon: "router", label: "Switch" },
-        { icon: "router", label: "Routeur" },
-        { icon: "server", label: "Serveur" },
-      ];
-
       React.useEffect(() => { lucide.createIcons(); }, []);
-
       return (
         <div>
-          <h1 style={{textAlign:'center'}}>EasyConfig</h1>
-          <div className="ec-diagram">
-            {nodes.map((n, i) => (
-              <div className="ec-node" key={i}>
-                <div className="ec-node-icon"><i data-lucide={n.icon} style={{width:32, height:32, color:'#38bdf8'}}></i></div>
-                <span>{n.label}</span>
-              </div>
-            ))}
-          </div>
+          <h1>EasyConfig <i data-lucide="network"></i></h1>
+          <div className="box"><i data-lucide="monitor"></i><p>PC</p></div>
+          <div className="box"><i data-lucide="router"></i><p>Switch</p></div>
+          <div className="box"><i data-lucide="server"></i><p>Serveur</p></div>
         </div>
       );
     }
-    
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
 </body>
 </html>
