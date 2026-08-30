@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>EasyConfig</title>
-  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <style>
-    body { background:#0f172a; color:white; font-family:Arial; padding:30px; text-align:center; }
-    .box { display:inline-block; border:1px solid #38bdf8; padding:20px; margin:10px; border-radius:10px; }
-  </style>
+<meta charset="UTF-8">
+<title>EasyConfig</title>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body { background:#0f172a; color:white; font-family:Arial; padding:30px; text-align:center; }
+.box { display:inline-block; border:1px solid #38bdf8; padding:20px; margin:10px; border-radius:10px; background:#1e293b; }
+</style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    function App() {
-      React.useEffect(() => { lucide.createIcons(); }, []);
-      return (
-        <div>
-          <h1>EasyConfig <i data-lucide="network"></i></h1>
-          <div className="box"><i data-lucide="monitor"></i><p>PC</p></div>
-          <div className="box"><i data-lucide="router"></i><p>Switch</p></div>
-          <div className="box"><i data-lucide="server"></i><p>Serveur</p></div>
-        </div>
-      );
-    }
-    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-  </script>
+<div id="root"></div>
+<script type="text/babel">
+function App() {
+  React.useEffect(() => { lucide.createIcons(); }, []);
+  return (
+    <div>
+      <h1>EasyConfig <i data-lucide="network"></i></h1>
+      <div className="box"><i data-lucide="monitor"></i><p>PC</p></div>
+      <div className="box"><i data-lucide="router"></i><p>Switch</p></div>
+      <div className="box"><i data-lucide="server"></i><p>Serveur</p></div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
 </body>
 </html>
